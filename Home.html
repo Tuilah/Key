@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đăng Nhập</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #66a6ff, #89f7fe);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            transform: scale(0);
+            animation: scaleUp 0.5s forwards;
+        }
+
+        @keyframes scaleUp {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="password"]:focus {
+            border-color: #66a6ff;
+            box-shadow: 0 0 10px rgba(102, 166, 255, 0.6);
+        }
+
+        button {
+            padding: 15px 25px;
+            background-color: #66a6ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #55aaff;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        .buttons-container {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin-top: 50px;
+        }
+
+        .buttons-container button {
+            margin: 10px;
+        }
+
+        /* Logo Discord */
+        .discord-logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h1>Trang Đăng Nhập</h1>
+        <input type="password" id="password" placeholder="Nhập mật khẩu">
+        <button onclick="checkPassword()">Đăng Nhập</button>
+        <div class="error-message" id="error-message">Mật khẩu không chính xác!</div>
+    </div>
+
+    <div class="buttons-container" id="buttons-container">
+        <h2>Chọn một trang:</h2>
+        <button onclick="window.location.href='https://www.hackbloxfruit.vn'">Vào trang chủ hack roblox loại client</button>
+        <button onclick="window.location.href='https://www.google.com'">Vào Google</button>
+        <button onclick="window.location.href='https://discord.gg/btFFVrFQ'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Discord_logo_2015.svg" class="discord-logo" alt="Discord Logo"> Vào Discord
+        </button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+            const loginContainer = document.getElementById("login-container");
+            const buttonsContainer = document.getElementById("buttons-container");
+
+            // Kiểm tra mật khẩu
+            if (password === "KEYHACKERGAMEPEMINUM4BC6") {
+                loginContainer.style.display = "none"; // Ẩn phần đăng nhập
+                buttonsContainer.style.display = "block"; // Hiện các nút chọn trang
+            } else {
+                errorMessage.style.display = "block"; // Hiện thông báo lỗi nếu mật khẩu sai
+            }
+        }
+    </script>
+</body>
+</html>
